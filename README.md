@@ -2,9 +2,9 @@
 
 A small, time-injectable token-bucket rate limiter — no Redis, no dependencies.
 
-No dependencies, no service to run — just the standard library.
+Java Token Bucket Rate Limiter uses only the java standard library; there is no service or dependency to install.
 
 ```
 TokenBucket.java
 ```
-See the test next to the source for usage.
+Run the Java Token Bucket Rate Limiter test next to the implementation for concrete examples.
