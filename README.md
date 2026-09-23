@@ -4,6 +4,8 @@
 TokenBucket.java
 ```
 
-This utility enforces API throughput limits using standard Java concurrency primitives. Local state avoids network partition risks during core transaction processing.
+Financial systems require strict request throttling. This prevents abuse and maintains SLA compliance. This implementation provides an in-memory token bucket. It requires no Redis. There are no external dependencies. It uses only the Java standard library.
 
-Time-dependent logic requires strict clock control. The main gotcha is thread contention when advancing the mock clock across concurrent bucket checks. Inject a monotonic clock interface to keep audit tests deterministic.
+The real gotcha in rate limiting is non-deterministic time. Hardcoding system time makes unit tests flaky. It complicates compliance audit reproduction. This design injects a time source. You control the clock.
+
+Run the test suite next to the implementation for concrete examples.
